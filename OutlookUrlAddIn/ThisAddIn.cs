@@ -22,7 +22,7 @@ namespace OutlookUrlAddIn
             Outlook.Inspector activeInspector = application.ActiveInspector();
             if (activeInspector != null)
             {
-                MessageBox.Show("Active inspector: " + activeInspector.Caption);
+                //MessageBox.Show("Active inspector: " + activeInspector.Caption);
             }
 
             // Get the Explorer objects
@@ -30,10 +30,11 @@ namespace OutlookUrlAddIn
             Outlook.Explorer activeExplorer = application.ActiveExplorer();
             if (activeExplorer != null)
             {
-                MessageBox.Show("Active explorer: " + activeExplorer.Caption);
+                //MessageBox.Show("Active explorer: " + activeExplorer.Caption);
             }
         }
 
+        // Automate email's subject and body
         private void inspectors_NewInspector(Outlook.Inspector Inspector)
         {
             Outlook.MailItem mailItem = Inspector.CurrentItem as Outlook.MailItem;
