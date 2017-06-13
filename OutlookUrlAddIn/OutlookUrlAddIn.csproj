@@ -22,7 +22,7 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBE77EFD-CDA1-47D5-B616-9E71EA3CAF04}</ProjectGuid>
+    <ProjectGuid>{2B78E8C9-6816-4CE5-84E8-7177A78FA8F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>OutlookUrlAddIn</RootNamespace>
@@ -203,7 +203,7 @@
     <ManifestKeyFile>OutlookUrlAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C4154C4B6EAC964BF9BBBFDF1A3C2C60CEA9182F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>80C737CE1752ADAE9F962F4E99F4E6053736436B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
