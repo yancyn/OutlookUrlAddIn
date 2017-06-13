@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
@@ -23,10 +24,26 @@ namespace OutlookUrlAddIn
             if (activeExplorer != null)
             {
                 MessageBox.Show("Active explorer: " + activeExplorer.Caption);
+
+                string fileName = DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".txt";
+                fileName = Path.GetTempPath() + fileName;
+
+                StreamWriter writer = new StreamWriter(fileName);
+                StringBuilder builder = new StringBuilder();
+
                 foreach (Outlook.MailItem mail in activeExplorer.CurrentFolder.Items)
                 {
+                    // TODO: Extract url from email body
+                    builder.AppendLine(mail.Subject);
                     System.Diagnostics.Debug.WriteLine(mail.Subject);
                 }
+
+                // write result to text file
+                writer.Write(builder.ToString());
+                writer.Close();
+
+                // open the text file
+                System.Diagnostics.Process.Start(fileName);
             }
         }
     }
