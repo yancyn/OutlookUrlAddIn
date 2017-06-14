@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutlookUrlAddIn", "OutlookUrlAddIn\OutlookUrlAddIn.csproj", "{2B78E8C9-6816-4CE5-84E8-7177A78FA8F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutlookUrlAddIn.Test", "OutlookUrlAddIn.Test\OutlookUrlAddIn.Test.csproj", "{A32EF150-211D-4163-82AA-CBD1CA00294E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2B78E8C9-6816-4CE5-84E8-7177A78FA8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B78E8C9-6816-4CE5-84E8-7177A78FA8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B78E8C9-6816-4CE5-84E8-7177A78FA8F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32EF150-211D-4163-82AA-CBD1CA00294E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32EF150-211D-4163-82AA-CBD1CA00294E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32EF150-211D-4163-82AA-CBD1CA00294E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32EF150-211D-4163-82AA-CBD1CA00294E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
