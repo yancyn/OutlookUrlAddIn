@@ -31,16 +31,20 @@ namespace OutlookUrlAddIn
                 StreamWriter writer = new StreamWriter(fileName);
                 StringBuilder builder = new StringBuilder();
 
-                foreach (Outlook.MailItem mail in activeExplorer.CurrentFolder.Items)
+                foreach (object item in activeExplorer.CurrentFolder.Items)
                 {
-                    // Extract url from email body
-                    string[] urls = Utils.ExtractUrl(mail.Body);
-                    if (urls.Length > 0)
+                    if (item is Outlook.MailItem)
                     {
-                        foreach (string url in urls)
-                            builder.AppendLine(url);
+                        // Extract url from email body
+                        Outlook.MailItem mail = (Outlook.MailItem)item;
+                        string[] urls = Utils.ExtractUrl(mail.Body);
+                        if (urls.Length > 0)
+                        {
+                            foreach (string url in urls)
+                                builder.AppendLine(url);
+                        }
+                        System.Diagnostics.Debug.WriteLine(mail.Subject);
                     }
-                    System.Diagnostics.Debug.WriteLine(mail.Subject);
                 }
 
                 // write result to text file
