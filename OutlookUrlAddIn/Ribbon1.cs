@@ -23,7 +23,7 @@ namespace OutlookUrlAddIn
             Outlook.Explorer activeExplorer = application.ActiveExplorer();
             if (activeExplorer != null)
             {
-                MessageBox.Show("Active explorer: " + activeExplorer.Caption);
+                //MessageBox.Show("Active explorer: " + activeExplorer.Caption);
 
                 string fileName = DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".txt";
                 fileName = Path.GetTempPath() + fileName;
@@ -33,8 +33,13 @@ namespace OutlookUrlAddIn
 
                 foreach (Outlook.MailItem mail in activeExplorer.CurrentFolder.Items)
                 {
-                    // TODO: Extract url from email body
-                    builder.AppendLine(mail.Subject);
+                    // Extract url from email body
+                    string[] urls = Utils.ExtractUrl(mail.Body);
+                    if (urls.Length > 0)
+                    {
+                        foreach (string url in urls)
+                            builder.AppendLine(url);
+                    }
                     System.Diagnostics.Debug.WriteLine(mail.Subject);
                 }
 
