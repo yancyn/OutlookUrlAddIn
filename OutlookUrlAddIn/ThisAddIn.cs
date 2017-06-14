@@ -17,7 +17,7 @@ namespace OutlookUrlAddIn
             Outlook.Application application = this.Application;
 
             this.inspectors = this.Application.Inspectors;
-            this.inspectors.NewInspector += inspectors_NewInspector;
+            //this.inspectors.NewInspector += inspectors_NewInspector;
 
             Outlook.Inspector activeInspector = application.ActiveInspector();
             if (activeInspector != null)
