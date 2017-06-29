@@ -4,7 +4,7 @@ $idle = 1000
 
 # Parse from urls.txt
 # $urls = @("http://news.google.com", "https://www.yahoo.com/news/")
-$urls = Get-Content urls.txt
+$urls = Get-Content url.txt
 
 $ie = New-Object -COMObject InternetExplorer.Application
 $ie.Visible = $True
