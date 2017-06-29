@@ -1,6 +1,7 @@
+param([Int32]$idle=1000)
+#idle time parameter from command prompt. idle time 1000ms = 1s
+
 Clear-Host
-# TODO: idle time 1000ms = 1s
-$idle = 1000
 
 # Parse from urls.txt
 # $urls = @("http://news.google.com", "https://www.yahoo.com/news/")
