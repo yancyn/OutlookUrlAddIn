@@ -1,18 +1,30 @@
 # Outlook Extract Url Add-In
 Extract url from outlook folder.
 
+## Download
+Under [release](https://github.com/yancyn/OutlookUrlAddIn/releases) tab pick the latest version.
+
 ## How to Install Outlook Add-In
 Double click on OutlookUrlAddIn.vsto.
 
 ## How to Remove Outlook Add-In (VSTO)
 Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 
-## How To
+## How To Use
 1. Double click OutlookUrlAddIn.vsto. This will install to your Outlook 2013.
 2. Under local folder > select specified folder > Add-Ins.
 3. Press on 'Get Url' on (ribbon) menu.
 4. A new text file will pop up after finished processing.
 5. Done.
+
+## How to Auto Submit Links
+1. Download ```ClickAllLinks.ps1``` and ```Start.bat```.
+2. Prepare the url list in a file and save as ```url.txt``` (refer to step above).
+3. Double click on ```Start.bat``` or manually start the powershell script.
+```
+cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
+```
+3. Done.
 
 ## References
 - https://www.codeproject.com/Articles/1112815/How-to-Create-an-Add-in-for-Microsoft-Outlook
