@@ -11,13 +11,13 @@ $ie.Visible = $True
 Add-Type -AssemblyName System.Windows.Forms
 
 # Start loop collection of url list and navigate
-# Add-Type -AssemblyName PresentationFramework
+Add-Type -AssemblyName PresentationFramework
 # For($i=0;$i -lt $urls.Length;$i++) {
 foreach($url in $urls) {
-    # [System.Windows.MessageBox]::Show($url)
     Start-Sleep -s 1
     $ie.Navigate($url)
     [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
     [System.Windows.Forms.SendKeys]::SendWait("{ENTER}");Start-Sleep -m $idle
 }
 $ie.Quit()
+[System.Windows.MessageBox]::Show("Done", "Auto Submit")
