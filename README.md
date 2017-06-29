@@ -7,10 +7,13 @@ Under [release](https://github.com/yancyn/OutlookUrlAddIn/releases) tab pick the
 ## How to Install Outlook Add-In
 Double click on OutlookUrlAddIn.vsto.
 
-## How to Remove Outlook Add-In (VSTO)
+## How to Uninstall Outlook Add-In
+Go to Control Panel > Uninstall Program > Pick OutlookUrlAddIn > Uninstall.
+
+## How to Disable Outlook Add-In (VSTO)
 Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 
-## How To Use Extract Link from Outlook Folder
+## How To Extract Link from Outlook Folder
 1. Double click OutlookUrlAddIn.vsto. This will install to your Outlook 2013.
 2. Under local folder > select specified folder > Add-Ins.
 3. Press on 'Get Url' on (ribbon) menu.
@@ -20,7 +23,7 @@ Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 ## How to Auto Submit Links
 1. Download ```ClickAllLinks.ps1``` and ```Start.bat```.
 2. Prepare the url list in a file (see step _How To Extract Link_ above) and save as ```url.txt``` same location in step 1.
-3. Double click on ```Start.bat``` or manually start the powershell script.
+3. Double click on ```Start.bat``` or manually start the powershell script from command prompt.
 ```
 cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
 ```
