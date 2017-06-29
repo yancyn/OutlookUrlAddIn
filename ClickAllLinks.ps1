@@ -1,16 +1,23 @@
 Clear-Host
-$pause = 500
-# TODO: Parse from urls.txt
-$urls = @("http://news.google.com", "https://www.yahoo.com/news/")
+# TODO: idle time 1000ms = 1s
+$idle = 1000
+
+# Parse from urls.txt
+# $urls = @("http://news.google.com", "https://www.yahoo.com/news/")
+$urls = Get-Content urls.txt
+
 $ie = New-Object -COMObject InternetExplorer.Application
 $ie.Visible = $True
 Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName PresentationFramework
-For($i=0;$i -lt $urls.Length;$i++) {
-    # [System.Windows.MessageBox]::Show($i)
+
+# Start loop collection of url list and navigate
+# Add-Type -AssemblyName PresentationFramework
+# For($i=0;$i -lt $urls.Length;$i++) {
+foreach($url in $urls) {
+    # [System.Windows.MessageBox]::Show($url)
     Start-Sleep -s 1
-    $ie.Navigate($urls[$i])
-    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $pause
-    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}");Start-Sleep -m $pause
+    $ie.Navigate($url)
+    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}");Start-Sleep -m $idle
 }
 $ie.Quit()
