@@ -20,10 +20,15 @@ Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 4. A new text file will pop up after finished processing.
 5. Done.
 
+# Auto Submit Links
+## Assumption
+- Open a link with IE and hit on enter key to submit.
+- Not support if require login or authentication.
+
 ## How to Auto Submit Links
 1. Download ```ClickAllLinks.ps1``` and ```Start.bat```.
 2. Prepare the url list in a file (see step _How To Extract Link_ above) and save as ```url.txt``` same location in step 1.
-3. Double click on ```Start.bat``` or manually start the powershell script from command prompt.
+3. Double click on ```Start.bat``` or manually start the PowerShell script from command prompt.
 ```
 cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
 ```
