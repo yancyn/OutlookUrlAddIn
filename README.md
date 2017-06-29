@@ -30,7 +30,7 @@ Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 2. Prepare the url list in a file (see step _How To Extract Link_ above) and save as ```url.txt``` same location in step 1.
 3. Double click on ```Start.bat``` or manually start the PowerShell script from command prompt.
 ```
-cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
+cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1" -idle 2000
 ```
 4. Done.
 
@@ -40,3 +40,4 @@ cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLink
 - https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-
 - http://www.tomsitpro.com/articles/powershell-for-loop,2-845.html
 - https://social.technet.microsoft.com/Forums/Azure/en-US/78d5a5fa-bb82-4c2d-a2c1-96d518b9bd74/need-to-read-text-file-as-an-array-and-get-elements-from-each-line-of-array-using-powershell?forum=winserverpowershell
+- https://stackoverflow.com/questions/5592531/how-to-pass-an-argument-to-a-powershell-script
