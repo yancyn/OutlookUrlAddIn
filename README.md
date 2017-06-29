@@ -10,7 +10,7 @@ Double click on OutlookUrlAddIn.vsto.
 ## How to Remove Outlook Add-In (VSTO)
 Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 
-## How To Use
+## How To Use Extract Link from Outlook Folder
 1. Double click OutlookUrlAddIn.vsto. This will install to your Outlook 2013.
 2. Under local folder > select specified folder > Add-Ins.
 3. Press on 'Get Url' on (ribbon) menu.
@@ -24,7 +24,7 @@ Outlook > File menu > Options > Add-Ins > Go > OutlookUrlAddIn > Remove.
 ```
 cmd > powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
 ```
-3. Done.
+4. Done.
 
 ## References
 - https://www.codeproject.com/Articles/1112815/How-to-Create-an-Add-in-for-Microsoft-Outlook
