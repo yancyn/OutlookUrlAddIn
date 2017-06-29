@@ -1,0 +1,1 @@
+powershell -windowstyle hidden -ExecutionPolicy ByPass -File "ClickAllLinks.ps1"
