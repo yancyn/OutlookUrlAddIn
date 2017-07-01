@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("OutlookUrlAddIn")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Plexus Corp.")]
+[assembly: AssemblyCompany("Muje Inc.")]
 [assembly: AssemblyProduct("OutlookUrlAddIn")]
-[assembly: AssemblyCopyright("Copyright © Plexus Corp. 2017")]
+[assembly: AssemblyCopyright("Copyright © Muje Inc. 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
