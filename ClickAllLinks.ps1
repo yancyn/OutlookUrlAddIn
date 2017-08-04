@@ -1,4 +1,4 @@
-param([Int32]$idle=1000)
+param([Int32]$idle=500)
 #idle time parameter from command prompt. idle time 1000ms = 1s
 
 # Wrap from url.txt into array.
@@ -14,8 +14,14 @@ Add-Type -AssemblyName System.Windows.Forms
 foreach($url in $urls) { # For($i=0;$i -lt $urls.Length;$i++)
     Start-Sleep -s 1
     $ie.Navigate($url)
+    Start-Sleep -s 60
     [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{ENTER}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{SPACE}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
+    [System.Windows.Forms.SendKeys]::SendWait("{SPACE}");Start-Sleep -m $idle
+    Start-Sleep -s 15
 }
 $ie.Quit()
 
