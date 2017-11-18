@@ -14,14 +14,15 @@ Add-Type -AssemblyName System.Windows.Forms
 foreach($url in $urls) { # For($i=0;$i -lt $urls.Length;$i++)
     Start-Sleep -s 1
     $ie.Navigate($url)
-    Start-Sleep -s 60
-    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{SPACE}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{TAB}");Start-Sleep -m $idle
-    [System.Windows.Forms.SendKeys]::SendWait("{SPACE}");Start-Sleep -m $idle
-    Start-Sleep -s 15
+
+    # see http://www.westerndevs.com/simple-powershell-automation-browser-based-tasks/
+    while($ie.Busy) { Start-Sleep -Milliseconds 100 }
+    $doc = $ie.Document
+    $chk = $doc.getElementById("decisionForAll_1")
+    $chk.click()
+
+    $btn = $doc.getElementById("Approval2_Submit")
+    $btn.click()
 }
 $ie.Quit()
 
