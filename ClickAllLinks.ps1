@@ -8,7 +8,20 @@ $urls = Get-Content url.txt
 
 $ie = New-Object -COMObject InternetExplorer.Application
 $ie.Visible = $True # set to false to run at background
-Add-Type -AssemblyName System.Windows.Forms
+
+# Example of submit in google search
+Function SearchInGoogle {
+  $doc = $ie.Document
+  $txt = $doc.getElementById("lst-ib")
+  $num1 = Get-Random
+  $num2 = Get-Random
+  $num1Str = "{0}" -f $num1
+  $num2Str = "{0}" -f $num2
+  $txt.value = -join($num1Str, "+", $num2Str)
+
+  $form = $doc.getElementById("tsf")
+  $form.submit()
+}
 
 # Start loop collection of url list and navigate
 # For($i=0;$i -lt $urls.Length;$i++)
@@ -18,14 +31,10 @@ foreach($url in $urls) {
     while($ie.Busy) { Start-Sleep -s 1 }
 
     $doc = $ie.Document
-    $chk = $doc.getElementById("decisionForAll_1")
-    $chk.click()
-
-    $btn = $doc.getElementById("Approval2_Submit")
-    $btn.click()
-    while($ie.Busy) { Start-Sleep -s 1 }
+    SearchInGoogle
+    while($doc.readyState -ne "complete") { Start-Sleep -s 1 }
 }
-$ie.Quit()
+# $ie.Quit()
 
 Add-Type -AssemblyName PresentationFramework
 [System.Windows.MessageBox]::Show("Done", "Auto Submit")
