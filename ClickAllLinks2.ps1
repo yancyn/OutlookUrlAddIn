@@ -27,7 +27,7 @@ For($i=0;$i -lt $urls.Length;$i++) {
     $btn.click()
     Start-Sleep -s 2
 
-    // HACK: Not sure why always failed at second url so repeat
+    # HACK: Not sure why always failed at second url so repeat
     if($i==1) {
         while($ie.Busy) { Start-Sleep -Milliseconds 100 }
         $doc = $ie.Document
