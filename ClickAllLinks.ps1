@@ -11,18 +11,19 @@ $ie.Visible = $True # set to false to run at background
 Add-Type -AssemblyName System.Windows.Forms
 
 # Start loop collection of url list and navigate
-foreach($url in $urls) { # For($i=0;$i -lt $urls.Length;$i++)
-    Start-Sleep -s 1
-    $ie.Navigate($url)
-
+# For($i=0;$i -lt $urls.Length;$i++)
+foreach($url in $urls) {
     # see http://www.westerndevs.com/simple-powershell-automation-browser-based-tasks/
-    while($ie.Busy) { Start-Sleep -Milliseconds 100 }
+    $ie.Navigate($url)
+    while($ie.Busy) { Start-Sleep -s 1 }
+
     $doc = $ie.Document
     $chk = $doc.getElementById("decisionForAll_1")
     $chk.click()
 
     $btn = $doc.getElementById("Approval2_Submit")
     $btn.click()
+    while($ie.Busy) { Start-Sleep -s 1 }
 }
 $ie.Quit()
 
