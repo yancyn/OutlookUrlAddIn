@@ -23,6 +23,16 @@ Function SearchInGoogle {
   $form.submit()
 }
 
+# Aprove all and submit a form
+Function ApproveAll {
+  $doc = $ie.Document
+  $chk = $doc.getElementById("decisionForAll_1")
+  $chk.click()
+
+  $btn = $doc.getElementById("Approval2_Submit")
+  $btn.click()
+}
+
 # Start loop collection of url list and navigate
 # For($i=0;$i -lt $urls.Length;$i++)
 foreach($url in $urls) {
@@ -30,8 +40,8 @@ foreach($url in $urls) {
     $ie.Navigate($url)
     while($ie.Busy) { Start-Sleep -s 1 }
 
+    ApproveAll
     $doc = $ie.Document
-    SearchInGoogle
     while($doc.readyState -ne "complete") { Start-Sleep -s 1 }
 }
 # $ie.Quit()
